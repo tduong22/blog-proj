@@ -1,39 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { Image } from './images/logo.jpg'
 
-class HeaderNav extends Component {
+export class HeaderNav extends Component {
     render() {
         return (
             <header id="header">
-                <h1><a href="#">Future Imperfect</a></h1>
-                <nav class="links">
-                    <ul>
-                        <li><a href="#">Lorem</a></li>
-                        <li><a href="#">Ipsum</a></li>
-                        <li><a href="#">Feugiat</a></li>
-                        <li><a href="#">Tempus</a></li>
-                        <li><a href="#">Adipiscing</a></li>
-                    </ul>
-                </nav>
-                <nav class="main">
-                    <ul>
-                        <li class="search">
-                            <a class="fa-search" href="#search">Search</a>
-                            <form id="search" method="get" action="#">
-                                <input type="text" name="query" placeholder="Search" />
-                            </form>
-                        </li>
-                        <li class="menu">
-                            <a class="fa-bars" href="#menu">Menu</a>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
+            <h1><a href="#">Future Imperfect</a></h1>
+            <nav className="links">
+              <ul>
+                <li><a href="#">Lorem</a></li>
+                <li><a href="#">Ipsum</a></li>
+                <li><a href="#">Feugiat</a></li>
+                <li><a href="#">Tempus</a></li>
+                <li><a href="#">Adipiscing</a></li>
+              </ul>
+            </nav>
+            <nav className="main">
+              <ul>
+                <li className="search">
+                  <a className="fa-search" href="#search">Search</a>
+                  <form id="search" method="get" action="#">
+                    <input type="text" name="query" placeholder="Search" />
+                  </form>
+                </li>
+                <li className="menu">
+                  <a className="fa-bars" href="#menu">Menu</a>
+                </li>
+              </ul>
+            </nav>
+          </header>
         );
     }
 }
-
-export default HeaderNav;
 
