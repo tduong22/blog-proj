@@ -1,34 +1,36 @@
 import React, { Component } from 'react';
-
+import TopMenu from './topmenu';
+import PropTypes from 'prop-types';
 export class HeaderNav extends Component {
-    render() {
+
+  constructor(props)
+   {
+      super(props);
+   }
+  render() {
         return (
             <header id="header">
-            <h1><a href="#">Future Imperfect</a></h1>
+            <h1><a href="#">{this.props.websiteName}</a></h1>
             <nav className="links">
               <ul>
-                <li><a href="#">Lorem</a></li>
-                <li><a href="#">Ipsum</a></li>
-                <li><a href="#">Feugiat</a></li>
-                <li><a href="#">Tempus</a></li>
-                <li><a href="#">Adipiscing</a></li>
+               {this.props.menuList.map(menu=>{
+                return  <li><a href={"#" + menu.name}>{menu.name}</a></li>
+               })}
               </ul>
-            </nav>
-            <nav className="main">
-              <ul>
-                <li className="search">
-                  <a className="fa-search" href="#search">Search</a>
-                  <form id="search" method="get" action="#">
-                    <input type="text" name="query" placeholder="Search" />
-                  </form>
-                </li>
-                <li className="menu">
-                  <a className="fa-bars" href="#menu">Menu</a>
-                </li>
-              </ul>
-            </nav>
+            </nav>            
+            <TopMenu/>
           </header>
         );
     }
+   static propTypes = {
+      websiteName: PropTypes.string.isRequired,
+      menuList: PropTypes.array.isRequired,
+   };
+
+   static defaultProps = {
+    websiteName: "Red Scarf",
+    menuList: [{name: 'Marketings'},{name: 'SEO'},{name: 'Stories'},{name: 'Others'},{name: 'About'}]
+   };
 }
+
 
